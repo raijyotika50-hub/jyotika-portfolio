@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jyotika Rai — Psychology Educator & Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1F3A5F;
+    --navy-light: #2a4f80;
+    --white: #ffffff;
+    --beige: #F7F3ED;
+    --beige-dark: #EDE8E0;
+    --sage: #A8B5A2;
+    --sage-dark: #7a9073;
+    --text: #2c2c2c;
+    --muted: #6b7280;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(31, 58, 95, 0.97);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 62px;
+  }
+  .nav-logo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+  .nav-logo span { color: var(--sage); }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--sage); }
+
+  /* TAGLINE BAR */
+  .tagline-bar {
+    background: var(--sage);
+    text-align: center;
+    padding: 7px 20px;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    color: var(--white);
+    font-weight: 700;
+    text-transform: uppercase;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 90;
+  }
+
+  /* SECTIONS */
+  section { position: relative; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    padding: 100px 80px 80px;
+    gap: 80px;
+    overflow: hidden;
+  }
+  .hero-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.07;
+    background: var(--sage);
+  }
+  .hero-bg-circle.c1 { width: 500px; height: 500px; top: -100px; right: -80px; }
+  .hero-bg-circle.c2 { width: 300px; height: 300px; bottom: 40px; left: 60px; }
+  .hero-text { flex: 1; position: relative; z-index: 2; }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    color: var(--sage);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .hero-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .hero-name span { color: var(--sage); }
+  .hero-title {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+  .hero-tagline {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--sage);
+    color: var(--white);
+    border: none;
+    padding: 13px 28px;
+    border-radius: 3px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--sage-dark); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.35);
+    padding: 13px 28px;
+    border-radius: 3px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--sage); color: var(--sage); }
+  .hero-photo {
+    flex-shrink: 0;
+    width: 260px;
+    height: 340px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, var(--navy-light) 0%, var(--sage-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+  }
+  .hero-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(168,181,162,0.3);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION LAYOUT ── */
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 90px 40px;
+  }
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    color: var(--sage-dark);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .section-line {
+    width: 48px;
+    height: 3px;
+    background: var(--sage);
+    margin-bottom: 40px;
+    border-radius: 2px;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--beige); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 70px;
+    align-items: start;
+  }
+  .about-photo-block {
+    background: var(--navy);
+    border-radius: 4px;
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: rgba(255,255,255,0.2);
+    box-shadow: 6px 6px 0 var(--sage);
+  }
+  .about-text p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+  .about-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  .chip {
+    background: var(--navy);
+    color: var(--white);
+    padding: 6px 16px;
+    border-radius: 2px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── JOURNEY ── */
+  #journey { background: var(--white); }
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--sage), var(--navy));
+  }
+  .timeline-item {
+    position: relative;
+    padding: 0 0 36px 28px;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-dot {
+    position: absolute;
+    left: -32px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2.5px solid var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    z-index: 1;
+  }
+  .timeline-year {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: var(--sage-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .timeline-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .timeline-sub {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ── WHAT I DO ── */
+  #whatido { background: var(--navy); }
+  #whatido .section-title { color: var(--white); }
+  #whatido .section-label { color: rgba(168,181,162,0.8); }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 30px 26px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .card:hover {
+    background: rgba(168,181,162,0.12);
+    transform: translateY(-3px);
+  }
+  .card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  .card-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .card-body {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ── PHILOSOPHY ── */
+  #philosophy { background: var(--beige); }
+  .philosophy-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .quote-block {
+    border-left: 3px solid var(--sage);
+    padding: 24px 28px;
+    background: var(--white);
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .quote-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  .quote-attr { font-size: 0.8rem; color: var(--muted); }
+  .phil-approach p {
+    font-size: 0.95rem;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .approach-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .approach-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+  .approach-list li::before {
+    content: '';
+    width: 8px; height: 8px;
+    background: var(--sage);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── RESEARCH ── */
+  #research { background: var(--white); }
+  .research-card {
+    background: var(--beige);
+    border-radius: 4px;
+    padding: 44px;
+    border-left: 4px solid var(--navy);
+  }
+  .research-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .research-sub { font-size: 0.85rem; color: var(--muted); margin-bottom: 30px; }
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .research-block { }
+  .research-block-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .research-block-text {
+    font-size: 0.88rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── AI & TECHNOLOGY ── */
+  #technology { background: var(--beige-dark); }
+  .tech-intro {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .tech-item {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 22px 18px;
+    text-align: center;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .tech-item:hover { border-color: var(--sage); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .tech-icon { font-size: 1.6rem; margin-bottom: 10px; }
+  .tech-name { font-size: 0.82rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--navy); }
+  #skills .section-title { color: var(--white); }
+  #skills .section-label { color: rgba(168,181,162,0.8); }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+  .skill-group-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .skill-list { display: flex; flex-direction: column; gap: 14px; }
+  .skill-item { }
+  .skill-name {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 6px;
+  }
+  .skill-bar {
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--sage), var(--sage-dark));
+    border-radius: 2px;
+    transition: width 1s ease;
+  }
+
+  /* ── HIGHLIGHTS ── */
+  #highlights { background: var(--beige); }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+  .stat-card {
+    background: var(--white);
+    border-radius: 4px;
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .stat-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-number span { color: var(--sage-dark); }
+  .stat-label {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--white); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .testi-card {
+    background: var(--beige);
+    border-radius: 4px;
+    padding: 30px;
+    position: relative;
+  }
+  .testi-card::before {
+    content: '"';
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    color: var(--sage);
+    opacity: 0.4;
+    line-height: 0.8;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .testi-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text);
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+  .testi-author {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .testi-role { font-size: 0.78rem; color: var(--muted); }
+
+  /* ── VISION ── */
+  #vision {
+    background: var(--navy);
+    text-align: center;
+  }
+  #vision .section-title { color: var(--white); }
+  #vision .section-label { color: rgba(168,181,162,0.8); }
+  #vision .section-line { margin-left: auto; margin-right: auto; }
+  .vision-quote {
+    max-width: 740px;
+    margin: 0 auto 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.8;
+    font-style: italic;
+  }
+  .vision-pillars {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .pillar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .pillar-icon { font-size: 1.8rem; }
+  .pillar-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 700;
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--beige); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .contact-intro { font-size: 1rem; color: var(--text); line-height: 1.8; margin-bottom: 30px; }
+  .contact-items { display: flex; flex-direction: column; gap: 18px; }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+  .contact-icon {
+    width: 40px; height: 40px;
+    background: var(--navy);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    color: white;
+  }
+  .contact-form { background: var(--white); border-radius: 4px; padding: 36px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); margin-bottom: 7px; }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--beige-dark);
+    border-radius: 3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--beige);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus { border-color: var(--sage); }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #111d2b;
+    padding: 24px 40px 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-right { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+  @media (max-width: 900px) {
+    #hero { flex-direction: column-reverse; padding: 100px 28px 80px; gap: 40px; }
+    .hero-photo { width: 180px; height: 230px; font-size: 3rem; }
+    .about-grid, .philosophy-inner, .contact-grid, .skills-grid { grid-template-columns: 1fr; }
+    .cards-grid, .research-grid, .tech-grid, .stats-grid, .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    nav { padding: 0 20px; }
+    .nav-links { display: none; }
+    .section-inner { padding: 70px 24px; }
+  }
+  @media (max-width: 540px) {
+    .cards-grid, .research-grid, .tech-grid, .stats-grid, .testimonials-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Jyotika <span>Rai</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#technology">AI & Tech</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-circle c1"></div>
+  <div class="hero-bg-circle c2"></div>
+  <div class="hero-text">
+    <p class="hero-eyebrow">Psychology · Education · Research</p>
+    <h1 class="hero-name">Jyotika<br><span>Rai</span></h1>
+    <p class="hero-title">Psychology Educator &nbsp;|&nbsp; Researcher &nbsp;|&nbsp; Curriculum Designer</p>
+    <p class="hero-tagline">"She doesn't just teach psychology — she builds learning experiences."</p>
+    <div class="hero-ctas">
+      <a href="#research" class="btn-primary">View Research</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <div class="photo-placeholder">
+      <span>🎓</span>
+      <span style="font-size:0.65rem">Your Photo Here</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <p class="section-label">Who I Am</p>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+        <div class="about-photo-block">🧠</div>
+      </div>
+      <div class="about-text">
+        <p>I am a Psychology educator and researcher with experience in senior secondary education, clinical psychology training, and academic research. My work sits at the intersection of evidence-based pedagogy and technology — making psychology genuinely engaging for every learner.</p>
+        <p>My focus is on building learning experiences that connect theory to lived reality: through case studies, practical activities, and research-backed methods that develop critical thinkers rather than passive memorisers.</p>
+        <p>I integrate AI tools thoughtfully into curriculum design and resource creation — not as a shortcut, but as a way to expand what's possible in modern educational practice.</p>
+        <div class="about-chips">
+          <span class="chip">PGT Psychology</span>
+          <span class="chip">Curriculum Designer</span>
+          <span class="chip">Clinical Training</span>
+          <span class="chip">AI-Integrated Educator</span>
+          <span class="chip">Researcher</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="section-inner">
+    <p class="section-label">My Path</p>
+    <h2 class="section-title">Journey & Milestones</h2>
+    <div class="section-line"></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">🎓</div>
+        <p class="timeline-year">Foundation</p>
+        <p class="timeline-title">Bachelor's in Psychology</p>
+        <p class="timeline-sub">Built a strong foundation in psychological theory, research methods, and human behaviour.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">🎓</div>
+        <p class="timeline-year">Postgraduate</p>
+        <p class="timeline-title">Master's in Psychology</p>
+        <p class="timeline-sub">Advanced study in psychological assessment, counselling principles, and academic research methodology.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">🧠</div>
+        <p class="timeline-year">Clinical</p>
+        <p class="timeline-title">Clinical Psychology Training</p>
+        <p class="timeline-sub">Hands-on clinical training in assessment, case formulation, and therapeutic frameworks.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">👩‍🏫</div>
+        <p class="timeline-year">Teaching</p>
+        <p class="timeline-title">PGT Psychology Educator</p>
+        <p class="timeline-sub">Senior secondary teaching with a focus on board examination preparation, practical psychology, and student mentorship.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">📚</div>
+        <p class="timeline-year">Content</p>
+        <p class="timeline-title">Educational Content Creator</p>
+        <p class="timeline-sub">Designed comprehensive notes, manuals, presentations, and assessments for psychology learners.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot">🤖</div>
+        <p class="timeline-year">Present</p>
+        <p class="timeline-title">AI-Integrated Educator & Researcher</p>
+        <p class="timeline-sub">Applying AI tools and prompt engineering to research, curriculum development, and innovative instructional design.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section id="whatido">
+  <div class="section-inner">
+    <p class="section-label">Expertise</p>
+    <h2 class="section-title">What I Do</h2>
+    <div class="section-line"></div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">📖</div>
+        <p class="card-title">Psychology Teaching</p>
+        <p class="card-body">Senior secondary classroom teaching grounded in evidence-based methods, board curriculum expertise, and student-centred delivery.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗂️</div>
+        <p class="card-title">Curriculum Design</p>
+        <p class="card-body">Developing structured, engaging syllabi and learning pathways that align academic rigour with real-world psychological application.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <p class="card-title">Student Mentorship</p>
+        <p class="card-body">Guiding students through board examinations, research projects, and career decisions with personalised academic support.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔬</div>
+        <p class="card-title">Psychological Research</p>
+        <p class="card-body">Conducting academic research in positive psychology, well-being, resilience, and grit — with a strong grounding in research methods and statistics.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📝</div>
+        <p class="card-title">Assessment Development</p>
+        <p class="card-body">Creating high-quality question banks, case study assessments, and evaluation tools aligned to learning objectives.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <p class="card-title">AI-Assisted Design</p>
+        <p class="card-body">Integrating generative AI tools into lesson planning, resource creation, and research synthesis to produce premium educational content at scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="section-inner">
+    <p class="section-label">My Approach</p>
+    <h2 class="section-title">Teaching Philosophy</h2>
+    <div class="section-line"></div>
+    <div class="philosophy-inner">
+      <div>
+        <div class="quote-block">
+          <p class="quote-text">"Psychology should be experienced, not memorised."</p>
+          <p class="quote-attr">— Jyotika Rai</p>
+        </div>
+        <p style="font-size:0.95rem; color:var(--text); line-height:1.8;">I believe the most powerful learning happens when students encounter psychology in the context of their own lives. Every concept I teach is anchored in real-world application, encouraging students to observe, reflect, and question.</p>
+      </div>
+      <div class="phil-approach">
+        <p>My classroom is built around five core principles that transform psychology from a subject to be passed into a lens through which students understand the world:</p>
+        <ul class="approach-list">
+          <li><strong>Case-Based Learning</strong> — Real cases make abstract theories concrete and memorable</li>
+          <li><strong>Practical Activities</strong> — Students conduct experiments, interviews, and observations</li>
+          <li><strong>Critical Thinking</strong> — Every claim is examined, not accepted at face value</li>
+          <li><strong>Real-Life Applications</strong> — Linking theory to career, relationships, and mental health</li>
+          <li><strong>Visual Learning</strong> — Diagrams, infographics, and Canva-designed visuals for every topic</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-inner">
+    <p class="section-label">Academic Work</p>
+    <h2 class="section-title">Research</h2>
+    <div class="section-line"></div>
+    <div class="research-card">
+      <p class="research-sub">Dissertation &nbsp;·&nbsp; Master's Research</p>
+      <p class="research-title">Relationship Between Grit, Resilience, and Mental Well-being Among Young Adults</p>
+      <div class="research-grid">
+        <div class="research-block">
+          <p class="research-block-label">Objective</p>
+          <p class="research-block-text">To examine how grit and resilience independently and jointly predict mental well-being outcomes in young adult populations.</p>
+        </div>
+        <div class="research-block">
+          <p class="research-block-label">Methodology</p>
+          <p class="research-block-text">Quantitative correlational design using validated psychometric tools and inferential statistical analysis.</p>
+        </div>
+        <div class="research-block">
+          <p class="research-block-label">Sample</p>
+          <p class="research-block-text">Young adults across educational settings, assessed using standardised measures for all three constructs.</p>
+        </div>
+        <div class="research-block">
+          <p class="research-block-label">Key Finding</p>
+          <p class="research-block-text">Grit and resilience together were significant predictors of mental well-being, underscoring positive psychology's role in student support.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI & TECHNOLOGY -->
+<section id="technology">
+  <div class="section-inner">
+    <p class="section-label">Innovation</p>
+    <h2 class="section-title">AI & Technology in Education</h2>
+    <div class="section-line"></div>
+    <p class="tech-intro">I am one of a small number of educators who doesn't just use AI — I understand it well enough to design with it. This means my resources, curricula, and instructional materials benefit from capabilities most classrooms haven't yet unlocked.</p>
+    <div class="tech-grid">
+      <div class="tech-item">
+        <div class="tech-icon">📋</div>
+        <p class="tech-name">AI-Assisted Lesson Planning</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🗺️</div>
+        <p class="tech-name">Curriculum Development</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">📦</div>
+        <p class="tech-name">Educational Resource Creation</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🔍</div>
+        <p class="tech-name">Research Synthesis</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">✍️</div>
+        <p class="tech-name">Academic Writing Support</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🖥️</div>
+        <p class="tech-name">Presentation Development</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">⚙️</div>
+        <p class="tech-name">Prompt Engineering</p>
+      </div>
+      <div class="tech-item">
+        <div class="tech-icon">🎨</div>
+        <p class="tech-name">Canva Instructional Design</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label">Competencies</p>
+    <h2 class="section-title">Skills</h2>
+    <div class="section-line"></div>
+    <div class="skills-grid">
+      <div>
+        <p class="skill-group-title">Psychology & Research</p>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-name"><span>Psychological Assessment</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Research Methods & Statistics</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Case Study Preparation</span><span>92%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Counselling Skills</span><span>82%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Student Evaluation & Assessment</span><span>93%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:93%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="skill-group-title">Digital & Design</p>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-name"><span>Canva & Instructional Design</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>AI Prompt Engineering</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Microsoft Office Suite</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Google Workspace</span><span>86%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:86%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Presentation Design</span><span>91%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width:91%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights">
+  <div class="section-inner">
+    <p class="section-label">Impact</p>
+    <h2 class="section-title">Highlights & Achievements</h2>
+    <div class="section-line"></div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <p class="stat-number">100<span>+</span></p>
+        <p class="stat-label">Psychology presentations designed</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-number">500<span>+</span></p>
+        <p class="stat-label">Assessment questions created</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-number">∞</p>
+        <p class="stat-label">Students mentored for board exams</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-number">1</p>
+        <p class="stat-label">Original research dissertation completed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <p class="section-label">What Others Say</p>
+    <h2 class="section-title">Testimonials</h2>
+    <div class="section-line"></div>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <p class="testi-text">Jyotika brings a rare combination of academic depth and genuine care for her students. Her psychology classes are unlike any I've seen — engaging, rigorous, and always relevant.</p>
+        <p class="testi-author">Principal</p>
+        <p class="testi-role">Senior Secondary School</p>
+      </div>
+      <div class="testi-card">
+        <p class="testi-text">Her teaching transformed how I understand psychology. She made every concept click through real-life examples and her materials were the best I've ever studied from.</p>
+        <p class="testi-author">Former Student</p>
+        <p class="testi-role">Class XII, Psychology</p>
+      </div>
+      <div class="testi-card">
+        <p class="testi-text">Working alongside Jyotika has been inspiring. Her ability to blend technology with deep subject knowledge puts her in a class of her own as an educator.</p>
+        <p class="testi-author">Colleague</p>
+        <p class="testi-role">Fellow Educator</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="section-inner" style="text-align:center;">
+    <p class="section-label">Looking Ahead</p>
+    <h2 class="section-title">My Vision</h2>
+    <div class="section-line" style="margin:0 auto 40px;"></div>
+    <p class="vision-quote">To bridge psychology, education, and technology — creating engaging, research-backed learning experiences that contribute meaningfully to higher education and mental health awareness.</p>
+    <div class="vision-pillars">
+      <div class="pillar"><span class="pillar-icon">🎓</span><span class="pillar-label">Higher Education</span></div>
+      <div class="pillar"><span class="pillar-icon">🔬</span><span class="pillar-label">Research</span></div>
+      <div class="pillar"><span class="pillar-icon">🧠</span><span class="pillar-label">Mental Health</span></div>
+      <div class="pillar"><span class="pillar-icon">🤖</span><span class="pillar-label">EdTech Innovation</span></div>
+      <div class="pillar"><span class="pillar-icon">📚</span><span class="pillar-label">Content Creation</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label">Let's Connect</p>
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="section-line"></div>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-intro">Whether you're looking for a psychology educator, a curriculum collaborator, a researcher, or a speaker for mental health workshops — I'd love to hear from you.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div style="font-weight:700;font-size:0.82rem;color:var(--navy);margin-bottom:2px;">Email</div>
+              <div style="color:var(--muted);font-size:0.88rem;">your.email@example.com</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🔗</div>
+            <div>
+              <div style="font-weight:700;font-size:0.82rem;color:var(--navy);margin-bottom:2px;">LinkedIn</div>
+              <div style="color:var(--muted);font-size:0.88rem;">linkedin.com/in/jyotikarai</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div style="font-weight:700;font-size:0.82rem;color:var(--navy);margin-bottom:2px;">Location</div>
+              <div style="color:var(--muted);font-size:0.88rem;">India</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Tell me how I can help…"></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;text-align:center;">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-name">Jyotika Rai &nbsp;·&nbsp; Psychology Educator & Researcher</p>
+  <p class="footer-right">Teaching &nbsp;·&nbsp; Research &nbsp;·&nbsp; Innovation &nbsp;·&nbsp; Psychology</p>
+</footer>
+
+<!-- TAGLINE BAR -->
+<div class="tagline-bar">Teaching &nbsp;·&nbsp; Research &nbsp;·&nbsp; Innovation &nbsp;·&nbsp; Psychology</div>
+
+</body>
+</html>
